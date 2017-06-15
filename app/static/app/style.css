@@ -1,0 +1,123 @@
+/*  */
+html, body { height: 100%; }
+
+
+/* Fullscreen Layout Stuff */
+.container-fluid {
+    height: 100%;
+    padding-left: 0px;
+    padding-right: 0px; 
+}
+.row {
+    height: 100%;
+}
+
+
+/* 3 Pane Styles */
+.pane {
+    height: 33.33333%;
+    text-align: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.letter { background-color: #5c415d; color: #f6f7eb; }
+.number { background-color: #f6f7eb; }
+.binary { background-color: #e94f37; }
+
+
+/* Text Box */
+input[type="text"] {
+    /*font-family: */
+    border: none;
+    border-bottom: solid 2px;
+    font-size: 3em;
+    text-align: center;
+    margin-top: 10%;
+    width: 100%;
+}
+
+/* <SWITCH> */
+/* Slider */
+.switch {
+  position: relative;
+  display: block;
+  width: 60px;
+  height: 34px;
+  margin: auto;
+}
+
+.switch input {
+    display:none;
+}
+
+/* Slider BG */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background-color: #ccc;
+  
+  -webkit-transition: .4s;
+  transition: .4s;
+
+  border-radius: 34px;
+}
+
+/* White Dot */
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Switch Labels */
+p.switch-label {
+  /* position: static;/* */
+    display: inline;
+}
+
+.cont {
+   /* position: static; /* */
+    display: inline;
+    margin: 10px;
+}
+
+/* </SWITCH> */
+
+
+/* Reactive Design switching */
+@media screen and (min-width: 768px) {
+    .pane {
+        height: 100%;
+    }
+    input[type="text"] {
+        margin-top: 40%;
+    }
+}
+

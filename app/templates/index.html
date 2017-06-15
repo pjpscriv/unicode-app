@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Unicode App</title>
+    <link rel="stylesheet" type="text/css" href="/static/app/style.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/static/app/bootstrap/css/bootstrap.min.css">
+
+  </head>
+  
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <!-- <form action="{% url 'submit' %}" method="post"> -->
+
+      <!-- 1. LETTER! --> 
+      <div class="pane letter col-sm-4">
+        {% csrf_token %}
+        <input type="text"  value="{{ letter_val }}" autocomplete="off" name="letter" class="letter">
+      </div>
+
+      <!-- 2. NUMBER! --> 
+      <div class="pane number col-sm-4">
+        <input type="text" value="{{ number_val }}" autocomplete="off" name="number" class="number">
+
+        <select class="encoding-format">
+          <option value="ascii">ASCII</option>
+          <option value="unicode">Unicode</option>
+        </select>
+
+        <div>
+          <p class="switch-label">651</p>
+            <!-- -->
+            <span class="cont">
+            <label class="switch">
+              <input type="checkbox" class="num_format">
+              <div class="slider round"></div>
+            </label>
+            </span class="cont">
+            <!-- -->
+          <p class="switch-label">U+0041</p>
+        </div>
+        
+
+
+      </div>
+      
+      <!-- 3. BINARY! --> 
+      <div class="pane binary col-sm-4">
+        <!-- maxlength="8" <- That's how you character limit stuff  -->
+        <input type="text" value="{{ binary_val }}" autocomplete="off" name="binary" class="binary" >
+
+        <select class="unicode-format">
+          <option value="utf-8">UTF-8</option>
+          <option value="utf-16">UTF-16</option>
+          <option value="utf-32">UTF-32</option>
+        </select>
+
+
+      </div>
+
+
+
+        <!-- </form> -->
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="static/app/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Actual Method Calls and Text Field Limiters -->
+    <script src="/static/app/ajax.js"></script>
+  </body>
+</html>
